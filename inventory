@@ -10,9 +10,9 @@
 
 # if dcs_exists: false and dcs_type: "etcd"
 [etcd_cluster]  # recommendation: 3, or 5-7 nodes
-10.128.64.140
-10.128.64.142
-10.128.64.143
+10.129.0.6
+10.129.0.8
+10.129.0.27
 
 # if dcs_exists: false and dcs_type: "consul"
 [consul_instances]  # recommendation: 3 or 5-7 nodes
@@ -24,18 +24,18 @@
 
 # if with_haproxy_load_balancing: true
 [balancers]
-10.128.64.140
-10.128.64.142
-10.128.64.143
+10.129.0.6
+10.129.0.8
+10.129.0.27
 #10.128.64.144 new_node=true
 
 # PostgreSQL nodes
 [master]
-10.128.64.140 hostname=pgnode01 postgresql_exists=false
+10.129.0.6 hostname=pgnode01 postgresql_exists=false
 
 [replica]
-10.128.64.142 hostname=pgnode02 postgresql_exists=false
-10.128.64.143 hostname=pgnode03 postgresql_exists=false
+10.129.0.8 hostname=pgnode02 postgresql_exists=false
+10.129.0.27 hostname=pgnode03 postgresql_exists=false
 #10.128.64.144 hostname=pgnode04 postgresql_exists=false new_node=true
 
 [postgres_cluster:children]
@@ -50,8 +50,8 @@ replica
 [all:vars]
 ansible_connection='ssh'
 ansible_ssh_port='22'
-ansible_user='root'
-ansible_ssh_pass='secretpassword'  # "sshpass" package is required for use "ansible_ssh_pass"
+ansible_user='uzur'
+#ansible_ssh_pass='secretpassword'  # "sshpass" package is required for use "ansible_ssh_pass"
 #ansible_ssh_private_key_file=
 #ansible_python_interpreter='/usr/bin/python3'  # is required for use python3
 
