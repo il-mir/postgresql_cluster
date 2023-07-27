@@ -10,7 +10,7 @@
 
 # if dcs_exists: false and dcs_type: "etcd"
 [etcd_cluster]  # recommendation: 3, or 5-7 nodes
-10.129.0.6
+10.129.0.34
 10.129.0.8
 10.129.0.27
 
@@ -24,14 +24,14 @@
 
 # if with_haproxy_load_balancing: true
 [balancers]
-10.129.0.6
+10.129.0.34
 10.129.0.8
 10.129.0.27
 #10.128.64.144 new_node=true
 
 # PostgreSQL nodes
 [master]
-10.129.0.6 hostname=pgnode01 postgresql_exists=false
+10.129.0.34 hostname=pgnode01 postgresql_exists=false
 
 [replica]
 10.129.0.8 hostname=pgnode02 postgresql_exists=false
