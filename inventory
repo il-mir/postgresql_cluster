@@ -31,11 +31,11 @@
 
 # PostgreSQL nodes
 [master]
-192.168.10.5 hostname=pgnode01 postgresql_exists=false
+192.168.10.5 hostname=pgnode01 postgresql_exists=true
 
 [replica]
-192.168.10.20 hostname=pgnode02 postgresql_exists=false
-192.168.10.25 hostname=pgnode03 postgresql_exists=false
+192.168.10.20 hostname=pgnode02 postgresql_exists=true
+192.168.10.25 hostname=pgnode03 postgresql_exists=true
 #10.128.64.144 hostname=pgnode04 postgresql_exists=false new_node=true
 
 [postgres_cluster:children]
